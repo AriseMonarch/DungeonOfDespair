@@ -1,0 +1,11 @@
+player_hp = 100
+player_turn = 1
+mana = 100
+stamina = 100
+potions = 3
+defend = 0
+Doom = 0
+xp = 0
+level = 1
+Required_xp = level * 100
+xp_percentage = (xp / Required_xp) * 100
