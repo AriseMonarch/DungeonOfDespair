@@ -18,3 +18,5 @@ def show_stamina():
         print("⚡ STAMINA [██░░░░░░░░]" ,PLAYER.stamina ,'/100')
     elif PLAYER.stamina > 0:
         print("⚡ STAMINA [░░░░░░░░░░]" ,PLAYER.stamina ,'/100')
+    elif PLAYER.stamina < 0:
+        print("⚡ STAMINA [░░░░░░░░░░]" ,PLAYER.stamina ,'/100')

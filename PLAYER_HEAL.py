@@ -16,7 +16,7 @@ def heal():
      PLAYER.potions = PLAYER.potions - 1
      print('Remaining Potions:', PLAYER.potions,'\n')   
 
-
+#--------------------------STATUS EFFECTS---------------------------
     if PLAYER.Doom > 3:
         PLAYER.Doom = 0
         return
@@ -26,7 +26,20 @@ def heal():
            PLAYER.Doom = PLAYER.Doom + 1
            return 
 
-    
+    if PLAYER.Bleed >= 1:
+                PLAYER.player_hp = PLAYER.player_hp - 5
+                PLAYER.Bleed = PLAYER.Bleed + 1
+            
+    elif PLAYER.Bleed > 3:
+           PLAYER.Bleed = 0
+           return
+
+    if PLAYER.slow > 2:
+        PLAYER.slow = 0
+        
+    elif PLAYER.slow == 1:
+        PLAYER.stamina - 5
+#-------------------------------------------------------------------
 
 def crit_heal():
     
@@ -43,7 +56,7 @@ def crit_heal():
      PLAYER.potions = PLAYER.potions - 1
      print('Remaining Potions:', PLAYER.potions,'\n')
 
-
+#--------------------------STATUS EFFECTS---------------------------
     if PLAYER.Doom > 3:
             PLAYER.Doom = 0
             return
@@ -52,3 +65,19 @@ def crit_heal():
         ENEMY_HEALTH_BAR.enemy_hp = ENEMY_HEALTH_BAR.enemy_hp - 20
         PLAYER.Doom = PLAYER.Doom + 1
         return 
+
+
+    if PLAYER.Bleed >= 1:
+            PLAYER.player_hp = PLAYER.player_hp - 5
+            PLAYER.Bleed = PLAYER.Bleed + 1
+        
+    elif PLAYER.Bleed > 3:
+            PLAYER.Bleed = 0
+            return
+
+    if PLAYER.slow > 2:
+         PLAYER.slow = 0
+    
+    elif PLAYER.slow == 1:
+         PLAYER.stamina - 5
+#------------------------------------------------------------------

@@ -9,7 +9,7 @@ def magic():
     print('MAGIC MENU\n')
     print('Fireball.'," ", 'costs 40 (MP), DEALS 30 DMG' )
     print('Ice Shards.', 'costs 20 (MP), DEALS 15 DMG TO ALL ENEMIES')
-    print('Demise.', " ", " ", 'costs 80 (MP), Places A Curse On The Enemy, DEALS 20 DMG EVERY TURN FOR 3 TURNS ')
+    print('Demise.', " ", " ", 'costs 80 (MP), Places A Curse On The Enemy, DEALS 20 DMG EVERY TURN FOR 3 TURNS, RETAIN YOUR OWN TURN ')
     action = input('> \n')
   
     if action.lower() == 'fireball':
@@ -35,9 +35,9 @@ def magic():
         PLAYER.stamina = PLAYER.stamina - 20
         PLAYER.mana = PLAYER.mana - 80
         PLAYER.Doom = PLAYER.Doom + 1
-        PLAYER.player_turn = PLAYER.player_turn + 1
         time.sleep(1)
-
+        
+#--------------------------STATUS EFFECTS---------------------------
     if PLAYER.Doom > 3:
        PLAYER.Doom = 0
        return
@@ -49,3 +49,18 @@ def magic():
 
     if PLAYER.stamina < 0:
         PLAYER.stamina = 0
+
+    if PLAYER.Bleed >= 1:
+         PLAYER.player_hp = PLAYER.player_hp - 5
+         PLAYER.Bleed = PLAYER.Bleed + 1
+            
+    elif PLAYER.Bleed > 3:
+         PLAYER.Bleed = 0
+         return
+
+    if PLAYER.slow > 2:
+         PLAYER.slow = 0
+    
+    elif PLAYER.slow == 1:
+         PLAYER.stamina - 5
+#-------------------------------------------------------------------
